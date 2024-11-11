@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZaixianqianyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZaixianqianyueEntity" id="zaixianqianyueMap">
+        <result property="hetongbianhao" column="hetongbianhao"/>
+        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="fangwuleixing" column="fangwuleixing"/>
+        <result property="xiaoqu" column="xiaoqu"/>
+        <result property="yuezujiage" column="yuezujiage"/>
+        <result property="zulinyueshu" column="zulinyueshu"/>
+        <result property="zulinjine" column="zulinjine"/>
+        <result property="yajin" column="yajin"/>
+        <result property="hetongjine" column="hetongjine"/>
+        <result property="shengxiaoriqi" column="shengxiaoriqi"/>
+        <result property="youxiaoqizhi" column="youxiaoqizhi"/>
+        <result property="hetongneirong" column="hetongneirong"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZaixianqianyueVO" >
+		SELECT * FROM zaixianqianyue  zaixianqianyue         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZaixianqianyueVO" >
+		SELECT  zaixianqianyue.* FROM zaixianqianyue  zaixianqianyue 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZaixianqianyueView" >
+
+		SELECT  zaixianqianyue.* FROM zaixianqianyue  zaixianqianyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZaixianqianyueView" >
+		SELECT * FROM zaixianqianyue  zaixianqianyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
